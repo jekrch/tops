@@ -84,7 +84,8 @@ export const topComics2025: ComicSeries[] = [
     cover_image: "/images/comics/invisible-man-cover.jpg",
     sample_images: [
       "/images/comics/invisible-man-1.jpg",
-      "/images/comics/invisible-man-2.jpg"
+      "/images/comics/invisible-man-2.jpg",
+      "/images/comics/invisible-man-3.jpg"
     ],
     description: "Jack Griffin has always been invisible to the people around him—at least in his own mind. Witness his legendary descent into madness as his humanity fades away and the monster inside is revealed.",
     link: "https://imagecomics.com/press-releases/james-tynion-iv-dani-unveil-the-invisible-man-in-new-universal-monsters-series",
