@@ -52,7 +52,7 @@ export const topComics2025: ComicSeries[] = [
     ],
     description: "Theresa, the estranged daughter of a small-town psychic fraud, returns home to care for her ailing mother. But she soon discovers there may be more to her mother's magic than she believed, finding herself pulled into a town that desperately needs her help.",
     link: "https://www.boom-studios.com/archives/minor-arcana-series-announcement/",
-    jj_comment: "Whatever Jeff Lemire writes and illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and explore a new sad-mom/sad-daughter frontier and the results are great. Joking aside, Lemire is a master of the dark, heartfelt family drama, and this is a great example."
+    jj_comment: "Whatever Jeff Lemire writes and illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and explore a new sad-mom/sad-daughter frontier and the results are great. Joking aside, Lemire is a master of the dark, heartfelt family drama."
   },
   {
     rank: 4,
@@ -68,7 +68,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/wonder-woman-2.jpg"
     ],
     description: "A bold reimagining of Wonder Woman from the ground up. Without the island paradise, without the sisterhood, Diana is the last Amazon—raised in Hell by her adoptive mother Circe. Winner of Best New Series at the 2025 Eisner Awards.",
-    link: "https://www.dc.com/comics/absolute-wonder-woman-2024/absolute-wonder-woman-1"
+    link: "https://www.dc.com/comics/absolute-wonder-woman-2024/absolute-wonder-woman-1",
+    jj_comment: "This grecian-mythology rooted take on Wonder Woman might as well be the definitive version from here on. The themes of motherhood and identify are engaging and of course Hayden Sherman's art is spectacular."
   },
   {
     rank: 5,
@@ -84,7 +85,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/invisible-man-2.jpg"
     ],
     description: "Jack Griffin has always been invisible to the people around him—at least in his own mind. Witness his legendary descent into madness as his humanity fades away and the monster inside is revealed. A haunting horror reimagining of the classic Universal monster.",
-    link: "https://imagecomics.com/press-releases/james-tynion-iv-dani-unveil-the-invisible-man-in-new-universal-monsters-series"
+    link: "https://imagecomics.com/press-releases/james-tynion-iv-dani-unveil-the-invisible-man-in-new-universal-monsters-series",
+    jj_comment: "I'm a big fan of Tynion's writing, and especially his dialogue, including in, this case, his character narration. He knows how to capture characters through their own words and that really made the character of Jack Griffin come alive for me."
   },
   {
     rank: 6,
@@ -102,7 +104,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/battle-beast-4.jpg"
     ],
     description: "Cursed with an unquenchable thirst for violence that threatens those he loves, Battle Beast searches the universe for the one warrior mightier than him—so that he may die before harming anyone else. The most demanded Invincible story of all time.",
-    link: "https://www.skybound.com/article/battle-beast-1-fourth-printing"
+    link: "https://www.skybound.com/article/battle-beast-1-fourth-printing",
+    jj_comment: "When I first started getting back into comics, I thought they were all big dumb fun like this. While I'm glad I was wrong, I also love this series."
   },
   {
     rank: 7,
@@ -117,7 +120,7 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/redcoat-1.jpg",
       "/images/comics/redcoat-2.jpg"
     ],
-    jj_comment: "We've liked several of the Ghost Machine stories, and it was a bit hard to choose between them. Redcoat made the list for its playful spirit and use/subversion of American history tropes.",
+    jj_comment: "We've liked several of the Ghost Machine stories, and it was a bit hard to choose between them. Redcoat made the list for its playful spirit and twisted take on American history tropes.",
     description: "British redcoat and all-around rogue Simon Pure mysteriously became immortal in 1776 after a run-in with the Founding Fathers. Reminiscent of Pirates of the Caribbean and Indiana Jones, Redcoat pulls back the curtain of American history.",
     link: "https://imagecomics.com/comics/series/redcoat"
   },
@@ -151,7 +154,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/were-taking-everyone-down-2.jpg"
     ],
     description: "After her mad-scientist father is killed by the world's greatest spy, 13-year-old Annalise is left alone in the world—sort of. Her dead dad's robot bodyguard is following her around. Now she must choose: lead a normal life or seek revenge and overthrow the world order.",
-    link: "https://imagecomics.com/comics/releases/were-taking-everyone-down-with-us-1-of-6"
+    link: "https://imagecomics.com/comics/releases/were-taking-everyone-down-with-us-1-of-6",
+    jj_comment: "Something about the way that Rosenberg writes young protagonists really works for me."
   },
   {
     rank: 10,
@@ -167,6 +171,7 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/everything-dead-dying-2.jpg"
     ],
     description: "Jack Chandler is the sole survivor of the zombie apocalypse in his rural farming community, but rather than eliminate them, he has chosen to continue living alongside the undead—including the husband and adopted daughter he fought so hard to have.",
-    link: "https://imagecomics.com/comics/releases/everything-dead-dying-1-of-5"
+    link: "https://imagecomics.com/comics/releases/everything-dead-dying-1-of-5",
+    jj_comment: "There is a devastating metaphor here about existing in a community that has left you behind, and the struggle to find meaning and connection in that context."
   }
 ];

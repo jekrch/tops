@@ -31,6 +31,7 @@ const ImageModal: FC<ImageModalProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const touchedRef = useRef(false); // Track if touch just occurred to prevent double-firing
+  const touchStartRef = useRef({ x: 0, y: 0 }); // Track touch start position for tap detection
 
   const isZoomed = zoomLevel > MIN_ZOOM;
 
@@ -73,8 +74,6 @@ const ImageModal: FC<ImageModalProps> = ({
 
   // Handle tap zoom with three stages
   const handleTapZoom = useCallback((clientX: number, clientY: number) => {
-    if (hasMoved) return;
-
     let newZoom: number;
     if (zoomLevel === MIN_ZOOM) {
       // First tap: zoom to half
@@ -92,7 +91,7 @@ const ImageModal: FC<ImageModalProps> = ({
     const newPosition = zoomAtPoint(newZoom, clientX, clientY, zoomLevel, position);
     setPosition(newPosition);
     setZoomLevel(newZoom);
-  }, [hasMoved, zoomLevel, position, zoomAtPoint]);
+  }, [zoomLevel, position, zoomAtPoint]);
 
   const toggleZoom = (e: MouseEvent) => {
     // Skip if this click was triggered by a touch (mobile)
@@ -100,6 +99,8 @@ const ImageModal: FC<ImageModalProps> = ({
       touchedRef.current = false;
       return;
     }
+    // Skip if we just finished dragging
+    if (hasMoved) return;
     handleTapZoom(e.clientX, e.clientY);
   };
 
@@ -139,9 +140,9 @@ const ImageModal: FC<ImageModalProps> = ({
     
     if (e.touches.length === 1) {
       const touch = e.touches[0];
-      setHasMoved(false);
-      // Store drag start position, but don't set isDragging yet
-      // We'll set it in touchMove only if there's actual movement
+      // Store start position for tap detection
+      touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+      
       if (isZoomed) {
         setDragStart({ x: touch.clientX - position.x, y: touch.clientY - position.y });
       }
@@ -151,16 +152,19 @@ const ImageModal: FC<ImageModalProps> = ({
   const handleTouchMove = (e: TouchEvent) => {
     if (e.touches.length === 1 && isZoomed) {
       const touch = e.touches[0];
-      const newX = touch.clientX - dragStart.x;
-      const newY = touch.clientY - dragStart.y;
-
-      // Check if we've moved enough to consider it a drag
-      if (Math.abs(newX - position.x) > 3 || Math.abs(newY - position.y) > 3) {
-        setHasMoved(true);
-        setIsDragging(true); // Only set isDragging once actually moving
-        setPosition({ x: newX, y: newY });
-      } else if (isDragging) {
-        // Continue updating position if already dragging
+      
+      // Check distance from start position (not current position) with higher threshold
+      const distFromStart = Math.abs(touch.clientX - touchStartRef.current.x) + 
+                           Math.abs(touch.clientY - touchStartRef.current.y);
+      
+      // Only start dragging if moved significantly from start (10px threshold)
+      if (distFromStart > 10) {
+        if (!isDragging) {
+          setIsDragging(true);
+          setHasMoved(true);
+        }
+        const newX = touch.clientX - dragStart.x;
+        const newY = touch.clientY - dragStart.y;
         setPosition({ x: newX, y: newY });
       }
     }
@@ -168,13 +172,19 @@ const ImageModal: FC<ImageModalProps> = ({
 
   const handleTouchEnd = (e: TouchEvent) => {
     if (e.touches.length === 0) {
-      // All fingers lifted - check if it was a tap (not a drag)
-      if (!hasMoved) {
-        const touch = e.changedTouches[0];
+      const touch = e.changedTouches[0];
+      
+      // Check if it was a tap (minimal movement from start)
+      const distFromStart = Math.abs(touch.clientX - touchStartRef.current.x) + 
+                           Math.abs(touch.clientY - touchStartRef.current.y);
+      
+      if (distFromStart <= 10) {
+        // It's a tap - use the END position for zoom target
         handleTapZoom(touch.clientX, touch.clientY);
       }
+      
       setIsDragging(false);
-      setTimeout(() => setHasMoved(false), 10);
+      setHasMoved(false);
     }
   };
 
