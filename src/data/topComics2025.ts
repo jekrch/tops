@@ -15,7 +15,7 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/assorted-crisis-events-2.jpg",
       "/images/comics/assorted-crisis-events-3.jpg"
     ],
-    description: "Time is having a crisis. An ongoing anthology following normal people navigating a world where time loops, space portals, and alternate realities collide with everyday life. Like Crisis on Infinite Earths if it happened to ordinary people.",
+    description: "Jacob here. I've never seen a description of this series that would make me want to read it, so I'll try to sum it up myself. Assorted Crisis Events is an anthology of standalone stories that explore contemporary issues through a sci-fi lens. Its topics range from climate change, the experience of immigrants in the US, disability and overcoming childhood trauma, and more. Each story is distinct but they all share a sense of deep empathy.",
     jj_comment: "This is some of the most powerful, insightful social-political commentary I've seen in comics. Deniz Camp is doing great work here.",
     link: "https://imagecomics.com/comics/series/assorted-crisis-events"
   },
