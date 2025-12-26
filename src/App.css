@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. Custom Colors */
+  --color-jk-teal: var(--jk-teal);
+  
+  /* 2. Extending Zinc with custom shades */
+  --color-zinc-850: #1f1f23;
+  --color-zinc-950: #0c0c0e;
+
+  /* 3. Font Family Override */
+  /* Note: In v4, this automatically overrides 'font-sans' */
+  --font-sans: Helvetica, Arial, sans-serif;
+
+  /* 4. Animation Registration */
+  --animate-pulse-teal: pulse-teal 2s infinite;
+}
+
+/* 5. Keyframes (Standard CSS now) */
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91, 133, 146, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(91, 133, 146, 0); }
+}
+
+
+html {
+  padding: env(safe-area-inset);
+  background-color: var(--jk-teal);
+}
+
+body {
+  /* background-color: var(--jk-teal); */
+  padding: 0;
+  @apply font-sans;
+}
+
+
+:root {
+  --jk-teal: #5b8592;
+}
+
+
+
+
+
+.app .fade-enter {
+  opacity: 0.01;
+}
+
+.app .fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.app .fade-exit {
+  opacity: 1;
+}
+
+.app .fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+.content-max-width {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* #5b8592 */
+@layer base {
+  a:not([class*="nav"]) {
+    @apply text-[#527882] hover:text-[#354d53];
+  }
+}
+
+::selection {
+  background: var(--jk-teal);
+  color: white;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.button-initial {
+  opacity: 0;
+  transform: translateY(8px);
+  -webkit-transform: translateY(8px);
+}
+
+@keyframes smoothReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    -webkit-transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes smoothReveal {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+.smooth-reveal {
+  animation: smoothReveal 1s ease-out both;
+  -webkit-animation: smoothReveal 1s ease-out both;
+}
+
+@keyframes dotFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    -webkit-transform: translateX(-50%) scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    -webkit-transform: translateX(-50%) scale(1);
+  }
+}
+
+@-webkit-keyframes dotFadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50%) scale(0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-50%) scale(1);
+  }
+}
+
+.dot-fade-in {
+  animation: dotFadeIn 0.3s ease-out both;
+  -webkit-animation: dotFadeIn 0.3s ease-out both;
+}
+
+/* iOS optimization styles */
+.ios-optimize {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Prevent backdrop-filter flicker on iOS */
+.button-backdrop {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
