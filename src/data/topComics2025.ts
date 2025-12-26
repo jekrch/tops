@@ -13,10 +13,11 @@ export const topComics2025: ComicSeries[] = [
     sample_images: [
       "/images/comics/assorted-crisis-events-1.jpg",
       "/images/comics/assorted-crisis-events-2.jpg",
-      "/images/comics/assorted-crisis-events-3.jpg"
+      "/images/comics/assorted-crisis-events-3.jpg",
+      "/images/comics/assorted-crisis-events-4.jpg"
     ],
-    description: "Jacob here. I've never seen a description of this series that would make me want to read it, so I'll try to sum it up myself. Assorted Crisis Events is an anthology of standalone stories that explore contemporary issues through a sci-fi lens. Its topics range from climate change, the experience of immigrants in the US, disability and overcoming childhood trauma, and more. Each story is distinct but they all share a sense of deep empathy.",
-    jj_comment: "This is some of the most powerful, insightful social-political commentary I've seen in comics. Deniz Camp is doing great work here.",
+    description: "",
+    jj_comment: "I've never seen a description of this series that would make me want to read it, so I'll try to sum it up myself. \n\n Assorted Crisis Events is an anthology of standalone stories that explore contemporary issues through the lens of speculative fiction. Its topics include climate change, the experience of immigrants in the US, disability, the mishandling of childhood trauma, and more. Each story is distinct but they all share a sense of deep empathy. \n\n This is some of the most powerful, insightful social-political commentary I've seen in comics. Deniz Camp is doing great work here.",
     link: "https://imagecomics.com/comics/series/assorted-crisis-events"
   },
   {
@@ -32,8 +33,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/beneath-the-trees-1.jpg",
       "/images/comics/beneath-the-trees-2.jpg"
     ],
-    description: "Dexter meets Richard Scarry's Busy Town. Samantha Strong is a small-town serial killer, upstanding citizen, and adorable brown bear. When a rival killer threatens her peaceful community, she must hunt them down before her own dark secrets are exposed.",
-    jj_comment: "Horvath's sense of humor and deep character work has made this series one of our favorites.",
+    description: "Samantha Strong is a small-town serial killer, upstanding citizen, and adorable brown bear. \n\n Monica is inching closer and closer to discovering the truth about her brother’s death…willing to do anything—cross any line—to make it happen. Samantha should be worried, but instead, the thrill has never been greater. Her unwitting prey is squirming in her clutches. For Samantha, this is where the real fun begins.",
+    jj_comment: "Horvath's sense of humor and deep character work has made this series one of our favorites. ",
     link: "https://idwpublishing.com/products/beneath-the-trees-where-nobody-sees-tpb"
   },
   {
@@ -52,7 +53,7 @@ export const topComics2025: ComicSeries[] = [
     ],
     description: "Theresa, the estranged daughter of a small-town psychic fraud, returns home to care for her ailing mother. But she soon discovers there may be more to her mother's magic than she believed, finding herself pulled into a town that desperately needs her help.",
     link: "https://www.boom-studios.com/archives/minor-arcana-series-announcement/",
-    jj_comment: "Whatever Jeff Lemire writes and illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and explore a new sad-mom/sad-daughter frontier and the results are great. Joking aside, Lemire is a master of the dark, heartfelt family drama."
+    jj_comment: "Whatever Jeff Lemire writes AND illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and explore a new sad-mom/sad-daughter frontier with great results. Joking aside, Lemire is a master of the dark, heartfelt family drama."
   },
   {
     rank: 4,
@@ -65,7 +66,8 @@ export const topComics2025: ComicSeries[] = [
     cover_image: "/images/comics/wonder-woman-cover.jpg",
     sample_images: [
       "/images/comics/wonder-woman-1.jpg",
-      "/images/comics/wonder-woman-2.jpg"
+      "/images/comics/wonder-woman-2.jpg",
+      "/images/comics/wonder-woman-3.jpg"
     ],
     description: "A bold reimagining of Wonder Woman from the ground up. Without the island paradise, without the sisterhood, Diana is the last Amazon—raised in Hell by her adoptive mother Circe. Winner of Best New Series at the 2025 Eisner Awards.",
     link: "https://www.dc.com/comics/absolute-wonder-woman-2024/absolute-wonder-woman-1",
@@ -78,15 +80,15 @@ export const topComics2025: ComicSeries[] = [
     writer: "James Tynion IV",
     artists: ["DANI"],
     colorists: ["Brad Simpson"],
-    letterers: [],
+    letterers: ["Becca Carey"],
     cover_image: "/images/comics/invisible-man-cover.jpg",
     sample_images: [
       "/images/comics/invisible-man-1.jpg",
       "/images/comics/invisible-man-2.jpg"
     ],
-    description: "Jack Griffin has always been invisible to the people around him—at least in his own mind. Witness his legendary descent into madness as his humanity fades away and the monster inside is revealed. A haunting horror reimagining of the classic Universal monster.",
+    description: "Jack Griffin has always been invisible to the people around him—at least in his own mind. Witness his legendary descent into madness as his humanity fades away and the monster inside is revealed.",
     link: "https://imagecomics.com/press-releases/james-tynion-iv-dani-unveil-the-invisible-man-in-new-universal-monsters-series",
-    jj_comment: "I'm a big fan of Tynion's writing, and especially his dialogue, including in, this case, his character narration. He knows how to capture characters through their own words and that really made the character of Jack Griffin come alive for me."
+    jj_comment: "I'm a big fan of Tynion's writing, and especially his dialogue, including, in this case, his character narration. He knows how to capture characters through their own words and that really made Jack Griffin come alive for me."
   },
   {
     rank: 6,
@@ -103,9 +105,9 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/battle-beast-3.jpg",
       "/images/comics/battle-beast-4.jpg"
     ],
-    description: "Cursed with an unquenchable thirst for violence that threatens those he loves, Battle Beast searches the universe for the one warrior mightier than him—so that he may die before harming anyone else. The most demanded Invincible story of all time.",
+    description: "Cursed with an unquenchable thirst for violence that threatens those he loves, Battle Beast searches the universe for the one warrior mightier than him—so that he may die before harming anyone else.",
     link: "https://www.skybound.com/article/battle-beast-1-fourth-printing",
-    jj_comment: "When I first started getting back into comics, I thought they were all big dumb fun like this. While I'm glad I was wrong, I also love this series."
+    jj_comment: "We came for the big dumb fun and stayed for the compelling characters and visual storytelling."
   },
   {
     rank: 7,
@@ -120,8 +122,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/redcoat-1.jpg",
       "/images/comics/redcoat-2.jpg"
     ],
-    jj_comment: "We've liked several of the Ghost Machine stories, and it was a bit hard to choose between them. Redcoat made the list for its playful spirit and twisted take on American history tropes.",
-    description: "British redcoat and all-around rogue Simon Pure mysteriously became immortal in 1776 after a run-in with the Founding Fathers. Reminiscent of Pirates of the Caribbean and Indiana Jones, Redcoat pulls back the curtain of American history.",
+    jj_comment: "We've liked several of the Ghost Machine series, and it was a bit hard to choose between them. Redcoat made the list for its playful spirit and twisted take on American history tropes.",
+    description: "British redcoat and all-around rogue, Simon mysteriously became immortal in 1776 after a run-in with the clandestine cabal known as the Founding Fathers, which included George Washington, John Hancock, and many other prominent American Revolutionary War leaders. Since that fateful day, Simon has led a life of adventure and avarice, rubbing elbows (and sometimes fists) with many of history’s most renowned figures.",
     link: "https://imagecomics.com/comics/series/redcoat"
   },
   {
@@ -138,7 +140,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/phantom-road-2.jpg"
     ],
     description: "Mad Max: Fury Road meets The Sandman. Long-haul truck driver Dom stops to help Birdie after a car crash, pulling an artifact that throws their lives into fifth gear. A frantic journey through a surreal world hunted by strange and impossible monsters.",
-    link: "https://imagecomics.com/comics/series/phantom-road"
+    link: "https://imagecomics.com/comics/series/phantom-road",
+    jj_comment: "There's a type of haunted, moody storytelling that Lemire keeps returning to. If you're in a gray-to-beige mood, give this one a try."
   },
   {
     rank: 9,

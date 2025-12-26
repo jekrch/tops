@@ -83,7 +83,7 @@ const ComicInlineDetail: FC<ComicInlineDetailProps> = ({ comic, isOpen }) => {
 
                         {/* Description */}
                         <div className="space-y-1">
-                            <p className="text-zinc-300 text-sm leading-relaxed">
+                            <p className="text-zinc-300 text-sm leading-relaxed whitespace-pre-line">
                                 {comic.description}
                             </p>
                             {comic.description_source && (
@@ -109,7 +109,7 @@ const ComicInlineDetail: FC<ComicInlineDetailProps> = ({ comic, isOpen }) => {
                                         J&J
                                     </span>
                                 </div>
-                                <p className="text-zinc-300 text-sm leading-relaxed italic">
+                                <p className="text-zinc-300 text-sm leading-relaxed italic whitespace-pre-line">
                                     "{comic.jj_comment}"
                                 </p>
                             </div>
