@@ -16,7 +16,7 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/assorted-crisis-events-3.jpg"
     ],
     description: "Time is having a crisis. An ongoing anthology following normal people navigating a world where time loops, space portals, and alternate realities collide with everyday life. Like Crisis on Infinite Earths if it happened to ordinary people.",
-    jj_comment: "This is some of the most powerful, insightful social-political commentary I've seen in comics. Each self-contained issue has genuinely made a difference in how I think about the contemporary issue it addressed. Its subjects include everything from climate change, disability rights, the experience of immigrants in America and more. Deniz Camp is doing great work here.",
+    jj_comment: "This is some of the most powerful, insightful social-political commentary I've seen in comics. Deniz Camp is doing great work here.",
     link: "https://imagecomics.com/comics/series/assorted-crisis-events"
   },
   {
@@ -33,7 +33,7 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/beneath-the-trees-2.jpg"
     ],
     description: "Dexter meets Richard Scarry's Busy Town. Samantha Strong is a small-town serial killer, upstanding citizen, and adorable brown bear. When a rival killer threatens her peaceful community, she must hunt them down before her own dark secrets are exposed.",
-    jj_comment: "This darkly comedic, psychological thriller has been one of our favorites since it started last year. Horvath has a way of bringing otherwise cartoonish characters to life. Samantha is a monster, tragic hero, and oddly relatable protagonist all at the same time.",
+    jj_comment: "Horvath's sense of humor and deep character work has made this series one of our favorites.",
     link: "https://idwpublishing.com/products/beneath-the-trees-where-nobody-sees-tpb"
   },
   {
@@ -51,7 +51,8 @@ export const topComics2025: ComicSeries[] = [
       "/images/comics/minor-arcana-3.jpg"
     ],
     description: "Theresa, the estranged daughter of a small-town psychic fraud, returns home to care for her ailing mother. But she soon discovers there may be more to her mother's magic than she believed, finding herself pulled into a town that desperately needs her help.",
-    link: "https://www.boom-studios.com/archives/minor-arcana-series-announcement/"
+    link: "https://www.boom-studios.com/archives/minor-arcana-series-announcement/",
+    jj_comment: "Whatever Jeff Lemire writes and illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and into sad-mom/sad-daughter territory, with great results. Joking aside, Lemire is a master of the dark, heartfelt family drama, and this is a great example."
   },
   {
     rank: 4,

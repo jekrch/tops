@@ -30,6 +30,7 @@ const ImageModal: FC<ImageModalProps> = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const touchedRef = useRef(false); // Track if touch just occurred to prevent double-firing
 
   const isZoomed = zoomLevel > MIN_ZOOM;
 
@@ -94,6 +95,11 @@ const ImageModal: FC<ImageModalProps> = ({
   }, [hasMoved, zoomLevel, position, zoomAtPoint]);
 
   const toggleZoom = (e: MouseEvent) => {
+    // Skip if this click was triggered by a touch (mobile)
+    if (touchedRef.current) {
+      touchedRef.current = false;
+      return;
+    }
     handleTapZoom(e.clientX, e.clientY);
   };
 
@@ -128,15 +134,15 @@ const ImageModal: FC<ImageModalProps> = ({
 
   // Touch handlers for mobile
   const handleTouchStart = (e: TouchEvent) => {
-    // Prevent synthetic click event from firing
-    e.preventDefault();
+    // Mark that a touch occurred - prevents synthetic click from firing
+    touchedRef.current = true;
     
     if (e.touches.length === 1) {
       const touch = e.touches[0];
+      setHasMoved(false); // Reset for both tap and drag detection
       if (isZoomed) {
         // Start drag if zoomed
         setIsDragging(true);
-        setHasMoved(false);
         setDragStart({ x: touch.clientX - position.x, y: touch.clientY - position.y });
       }
     }
