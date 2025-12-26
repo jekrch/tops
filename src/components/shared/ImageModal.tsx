@@ -139,29 +139,30 @@ const ImageModal: FC<ImageModalProps> = ({
     
     if (e.touches.length === 1) {
       const touch = e.touches[0];
-      setHasMoved(false); // Reset for both tap and drag detection
+      setHasMoved(false);
+      // Store drag start position, but don't set isDragging yet
+      // We'll set it in touchMove only if there's actual movement
       if (isZoomed) {
-        // Start drag if zoomed
-        setIsDragging(true);
         setDragStart({ x: touch.clientX - position.x, y: touch.clientY - position.y });
       }
     }
   };
 
   const handleTouchMove = (e: TouchEvent) => {
-    if (e.touches.length === 1 && isDragging && isZoomed) {
-      // Single finger drag
+    if (e.touches.length === 1 && isZoomed) {
       const touch = e.touches[0];
-
       const newX = touch.clientX - dragStart.x;
       const newY = touch.clientY - dragStart.y;
 
       // Check if we've moved enough to consider it a drag
       if (Math.abs(newX - position.x) > 3 || Math.abs(newY - position.y) > 3) {
         setHasMoved(true);
+        setIsDragging(true); // Only set isDragging once actually moving
+        setPosition({ x: newX, y: newY });
+      } else if (isDragging) {
+        // Continue updating position if already dragging
+        setPosition({ x: newX, y: newY });
       }
-
-      setPosition({ x: newX, y: newY });
     }
   };
 

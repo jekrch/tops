@@ -52,7 +52,7 @@ export const topComics2025: ComicSeries[] = [
     ],
     description: "Theresa, the estranged daughter of a small-town psychic fraud, returns home to care for her ailing mother. But she soon discovers there may be more to her mother's magic than she believed, finding herself pulled into a town that desperately needs her help.",
     link: "https://www.boom-studios.com/archives/minor-arcana-series-announcement/",
-    jj_comment: "Whatever Jeff Lemire writes and illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and into sad-mom/sad-daughter territory, with great results. Joking aside, Lemire is a master of the dark, heartfelt family drama, and this is a great example."
+    jj_comment: "Whatever Jeff Lemire writes and illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and explore a new sad-mom/sad-daughter frontier and the results are great. Joking aside, Lemire is a master of the dark, heartfelt family drama, and this is a great example."
   },
   {
     rank: 4,
