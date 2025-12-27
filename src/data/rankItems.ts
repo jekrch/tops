@@ -44,12 +44,12 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Jordie Bellaire"] },
       { label: "Letters", values: ["Hassan Otsmane-Elhaou"] },
     ],
-    cover_image: "/images/comics/assorted-crisis-events-cover.jpg",
+    cover_image: "/images/items/assorted-crisis-events-cover.jpg",
     sample_images: [
-      "/images/comics/assorted-crisis-events-1.jpg",
-      "/images/comics/assorted-crisis-events-2.jpg",
-      "/images/comics/assorted-crisis-events-3.jpg",
-      "/images/comics/assorted-crisis-events-4.jpg"
+      "/images/items/assorted-crisis-events-1.jpg",
+      "/images/items/assorted-crisis-events-2.jpg",
+      "/images/items/assorted-crisis-events-3.jpg",
+      "/images/items/assorted-crisis-events-4.jpg"
     ],
     description: "",
     review_comment: "I've never seen a description of this series that would make me want to read it, so I'll try to sum it up myself. \n\n Assorted Crisis Events is an anthology of standalone stories that explore contemporary issues through the lens of speculative fiction. Its topics include climate change, the experience of immigrants in the US, disability, the mishandling of childhood trauma, and more. Each story is distinct but they all share a sense of deep empathy. \n\n This is some of the most powerful, insightful social-political commentary I've seen in comics. Deniz Camp is doing great work here.",
@@ -65,10 +65,10 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Patrick Horvath"] },
       { label: "Letters", values: ["Hassan Otsmane-Elhaou"] },
     ],
-    cover_image: "/images/comics/beneath-the-trees-cover.jpg",
+    cover_image: "/images/items/beneath-the-trees-cover.jpg",
     sample_images: [
-      "/images/comics/beneath-the-trees-1.jpg",
-      "/images/comics/beneath-the-trees-2.jpg"
+      "/images/items/beneath-the-trees-1.jpg",
+      "/images/items/beneath-the-trees-2.jpg"
     ],
     description: "Samantha Strong is a small-town serial killer, upstanding citizen, and adorable brown bear. \n\n Monica is inching closer and closer to discovering the truth about her brother's death…willing to do anything—cross any line—to make it happen. Samantha should be worried, but instead, the thrill has never been greater. Her unwitting prey is squirming in her clutches. For Samantha, this is where the real fun begins.",
     review_comment: "Horvath's sense of humor and deep character work has made this series one of our favorites.",
@@ -84,11 +84,11 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Jeff Lemire"] },
       { label: "Letters", values: ["Steve Wands"] },
     ],
-    cover_image: "/images/comics/minor-arcana-cover.jpg",
+    cover_image: "/images/items/minor-arcana-cover.jpg",
     sample_images: [
-      "/images/comics/minor-arcana-1.jpg",
-      "/images/comics/minor-arcana-2.jpg",
-      "/images/comics/minor-arcana-3.jpg"
+      "/images/items/minor-arcana-1.jpg",
+      "/images/items/minor-arcana-2.jpg",
+      "/images/items/minor-arcana-3.jpg"
     ],
     description: "Theresa, the estranged daughter of a small-town psychic fraud, returns home to care for her ailing mother. But she soon discovers there may be more to her mother's magic than she believed, finding herself pulled into a town that desperately needs her help.",
     review_comment: "Whatever Jeff Lemire writes AND illustrates, we'll read. This series sees him step outside of his usual sad-dad comfort zone and explore a new sad-mom/sad-daughter frontier with great results. Joking aside, Lemire is a master of the dark, heartfelt family drama.",
@@ -104,11 +104,11 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Jordie Bellaire"] },
       { label: "Letters", values: ["Becca Carey"] },
     ],
-    cover_image: "/images/comics/wonder-woman-cover.jpg",
+    cover_image: "/images/items/wonder-woman-cover.jpg",
     sample_images: [
-      "/images/comics/wonder-woman-1.jpg",
-      "/images/comics/wonder-woman-2.jpg",
-      "/images/comics/wonder-woman-3.jpg"
+      "/images/items/wonder-woman-1.jpg",
+      "/images/items/wonder-woman-2.jpg",
+      "/images/items/wonder-woman-3.jpg"
     ],
     description: "A bold reimagining of Wonder Woman from the ground up. Without the island paradise, without the sisterhood, Diana is the last Amazon—raised in Hell by her adoptive mother Circe. Winner of Best New Series at the 2025 Eisner Awards.",
     review_comment: "This grecian-mythology rooted take on Wonder Woman might as well be the definitive version from here on. The themes of motherhood and identify are engaging and of course Hayden Sherman's art is spectacular.",
@@ -124,11 +124,11 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Brad Simpson"] },
       { label: "Letters", values: ["Becca Carey"] },
     ],
-    cover_image: "/images/comics/invisible-man-cover.jpg",
+    cover_image: "/images/items/invisible-man-cover.jpg",
     sample_images: [
-      "/images/comics/invisible-man-1.jpg",
-      "/images/comics/invisible-man-2.jpg",
-      "/images/comics/invisible-man-3.jpg"
+      "/images/items/invisible-man-1.jpg",
+      "/images/items/invisible-man-2.jpg",
+      "/images/items/invisible-man-3.jpg"
     ],
     description: "Jack Griffin has always been invisible to the people around him—at least in his own mind. Witness his legendary descent into madness as his humanity fades away and the monster inside is revealed.",
     review_comment: "I'm a big fan of Tynion's writing, and especially his dialogue, including, in this case, his character narration. He knows how to capture characters through their own words and that really made Jack Griffin come alive for me.",
@@ -144,12 +144,12 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Annalisa Leoni"] },
       { label: "Letters", values: ["Rus Wooton"] },
     ],
-    cover_image: "/images/comics/battle-beast-cover.jpg",
+    cover_image: "/images/items/battle-beast-cover.jpg",
     sample_images: [
-      "/images/comics/battle-beast-1.jpg",
-      "/images/comics/battle-beast-2.jpg",
-      "/images/comics/battle-beast-3.jpg",
-      "/images/comics/battle-beast-4.jpg"
+      "/images/items/battle-beast-1.jpg",
+      "/images/items/battle-beast-2.jpg",
+      "/images/items/battle-beast-3.jpg",
+      "/images/items/battle-beast-4.jpg"
     ],
     description: "Cursed with an unquenchable thirst for violence that threatens those he loves, Battle Beast searches the universe for the one warrior mightier than him—so that he may die before harming anyone else.",
     review_comment: "We came for the big dumb fun and stayed for the compelling characters and visual storytelling.",
@@ -165,10 +165,10 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Brad Anderson"] },
       { label: "Letters", values: ["Rob Leigh"] },
     ],
-    cover_image: "/images/comics/redcoat-cover.jpg",
+    cover_image: "/images/items/redcoat-cover.jpg",
     sample_images: [
-      "/images/comics/redcoat-1.jpg",
-      "/images/comics/redcoat-2.jpg"
+      "/images/items/redcoat-1.jpg",
+      "/images/items/redcoat-2.jpg"
     ],
     description: "British redcoat and all-around rogue, Simon mysteriously became immortal in 1776 after a run-in with the clandestine cabal known as the Founding Fathers, which included George Washington, John Hancock, and many other prominent American Revolutionary War leaders. Since that fateful day, Simon has led a life of adventure and avarice, rubbing elbows (and sometimes fists) with many of history's most renowned figures.",
     review_comment: "We've liked several of the Ghost Machine series, and it was a bit hard to choose between them. Redcoat made the list for its playful spirit and twisted take on American history tropes.",
@@ -184,10 +184,10 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Jordie Bellaire"] },
       { label: "Letters", values: ["Steve Wands"] },
     ],
-    cover_image: "/images/comics/phantom-road-cover.jpg",
+    cover_image: "/images/items/phantom-road-cover.jpg",
     sample_images: [
-      "/images/comics/phantom-road-1.jpg",
-      "/images/comics/phantom-road-2.jpg"
+      "/images/items/phantom-road-1.jpg",
+      "/images/items/phantom-road-2.jpg"
     ],
     description: "Mad Max: Fury Road meets The Sandman. Long-haul truck driver Dom stops to help Birdie after a car crash, pulling an artifact that throws their lives into fifth gear. A frantic journey through a surreal world hunted by strange and impossible monsters.",
     review_comment: "There's a type of haunted, moody storytelling that Lemire keeps returning to. If you're in a gray-to-beige mood, give this one a try.",
@@ -203,10 +203,10 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Roman Titov", "Jason Wordie"] },
       { label: "Letters", values: ["Hassan Otsmane-Elhaou"] },
     ],
-    cover_image: "/images/comics/were-taking-everyone-down-cover.jpg",
+    cover_image: "/images/items/were-taking-everyone-down-cover.jpg",
     sample_images: [
-      "/images/comics/were-taking-everyone-down-1.jpg",
-      "/images/comics/were-taking-everyone-down-2.jpg"
+      "/images/items/were-taking-everyone-down-1.jpg",
+      "/images/items/were-taking-everyone-down-2.jpg"
     ],
     description: "After her mad-scientist father is killed by the world's greatest spy, 13-year-old Annalise is left alone in the world—sort of. Her dead dad's robot bodyguard is following her around. Now she must choose: lead a normal life or seek revenge and overthrow the world order.",
     review_comment: "Something about the way that Rosenberg writes young protagonists really works for me.",
@@ -222,10 +222,10 @@ export const rankItems: RankItem[] = [
       { label: "Colors", values: ["Pip Martin"] },
       { label: "Letters", values: ["Aditya Bidikar"] },
     ],
-    cover_image: "/images/comics/everything-dead-dying-cover.jpg",
+    cover_image: "/images/items/everything-dead-dying-cover.jpg",
     sample_images: [
-      "/images/comics/everything-dead-dying-1.jpg",
-      "/images/comics/everything-dead-dying-2.jpg"
+      "/images/items/everything-dead-dying-1.jpg",
+      "/images/items/everything-dead-dying-2.jpg"
     ],
     description: "Jack Chandler is the sole survivor of the zombie apocalypse in his rural farming community, but rather than eliminate them, he has chosen to continue living alongside the undead—including the husband and adopted daughter he fought so hard to have.",
     review_comment: "There is a devastating metaphor here about existing in a community that has left you behind, and the struggle to find meaning and connection in that context.",
