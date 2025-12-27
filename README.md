@@ -4,6 +4,8 @@ A customizable ranked list web application built with React, TypeScript, and Tai
 
 **Demo:** [Jenny & Jacob's Top 10 Comic Series](https://comics.jacobkrch.com) 
 
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/7f2dffc4-2bef-4833-b38d-884466e52c53" />
+
 ---
 
 ## Features
