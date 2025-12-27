@@ -16,7 +16,7 @@ const MainTops: FC = () => {
   const getCurrentVisibleIndex = (): number => {
     const scrollTop = window.scrollY;
     let currentIndex = 0;
-    
+
     for (let i = 0; i < sortedComics.length; i++) {
       const rank = sortedComics[i].rank;
       const el = cardRefs.current.get(rank);
@@ -131,21 +131,24 @@ const MainTops: FC = () => {
                 </div>
               </div>
 
-              {/* Year Badge */}
-              <div className="hidden md:flex flex-col items-center">
-                <div className="w-16 h-16 bg-zinc-800 rotate-45 flex items-center justify-center border border-zinc-700">
-                  <span className="text-jk-teal text-2xl font-black -rotate-45">25</span>
+              {/* J&J Badge */}
+              <div className="hidden md:flex flex-col items-end gap-1">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-black text-jk-teal leading-none">J</span>
+                  <span className="text-4xl font-black text-zinc-600 leading-none">J</span>
                 </div>
-                <span className="text-zinc-600 text-xs mt-3 uppercase tracking-wider">Year in Review</span>
+                <div className="w-full h-0.5 bg-gradient-to-r from-jk-teal to-zinc-700" />
+                <span className="text-zinc-500 text-xs font-mono tracking-[0.3em]">2025</span>
               </div>
+
             </div>
 
             {/* Intro Note */}
             <div className="max-w-2xl">
               <p className="text-zinc-400 text-sm leading-relaxed border-l-2 border-zinc-700 pl-4">
-                  Jenny and I read an obnoxious number of comics this year, both new and old. For fun--and to soberly reflect on this recent obsession--we wrote up a list of the 2025 series that we enjoyed. 
-                  
-                  And then we had to narrow that down (!) to a tidy top ten in the following order. 
+                Jenny and I read an obnoxious number of comics this year, both new and old. For fun--and to soberly reflect on this recent obsession--we wrote up a list of the 2025 series that we enjoyed.
+
+                And then we had to narrow that down (!) to a tidy top ten in the following order.
               </p>
             </div>
           </div>
@@ -174,7 +177,7 @@ const MainTops: FC = () => {
                 className="w-8 h-8 flex items-center justify-center rounded transition-colors bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-jk-teal"
                 title="Previous item"
               >
-                <ChevronUp className="w-4 h-4" strokeWidth={2.5}  />
+                <ChevronUp className="w-4 h-4" strokeWidth={2.5} />
               </button>
               <button
                 onClick={goToNext}
@@ -193,8 +196,8 @@ const MainTops: FC = () => {
         {/* Accordion List */}
         <div className="divide-y divide-zinc-800/50">
           {sortedComics.map((comic) => (
-            <div 
-              key={comic.rank} 
+            <div
+              key={comic.rank}
               ref={(el) => setCardRef(comic.rank, el)}
               className="scroll-mt-14"
             >
