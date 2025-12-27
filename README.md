@@ -134,10 +134,6 @@ Reference them in your config with paths starting from `/images/`:
 cover_image: "/images/items/item-name-cover.jpg"
 ```
 
-**Recommended dimensions:**
-- Cover images: ~400×600px (2:3 aspect ratio)
-- Sample images: ~800×1200px or similar
-
 
 ## Theming
 
