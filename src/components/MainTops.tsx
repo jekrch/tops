@@ -1,4 +1,3 @@
-// components/MainTops.tsx
 import { type FC, useState, useRef, useEffect } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { type RankItem } from "../types/RankTypes";
@@ -23,7 +22,7 @@ const MainTops: FC<MainTopsProps> = ({
   const cardRefs = useRef<Map<number, HTMLDivElement>>(new Map());
 
   // Interpolate template strings in config
-  const { title, subtitle } = interpolateConfig(config);
+  const { subtitle } = interpolateConfig(config);
   const { branding, meta, content, theme } = config;
 
   // Dynamic accent color classes
