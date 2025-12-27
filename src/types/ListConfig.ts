@@ -41,29 +41,6 @@ export interface ListConfig {
   theme: ListTheme;
 }
 
-// Default configuration - Jenny & Jacob's Top 10 Comics
-export const defaultListConfig: ListConfig = {
-  branding: {
-    authorName: "Jenny & Jacob's",
-    authorInitials: "JJ",
-  },
-  meta: {
-    title: "Top {n} {subject}",
-    listSize: 10,
-    subject: "Comic Series",
-    subtitle: "Our Favorite Reads of {year}",
-    year: 2025,
-  },
-  content: {
-    introText:
-      "Jenny and I read an obnoxious number of comics this year, both new and old. For fun—and to soberly reflect on this recent obsession—we wrote up a list of the 2025 series that we enjoyed. And then we had to narrow that down (!) to a tidy top ten in the following order.",
-    expandPrompt: "tap to expand",
-  },
-  theme: {
-    accentColor: "jk-teal",
-  },
-};
-
 // Helper to interpolate template strings in config
 export function interpolateConfig(config: ListConfig): {
   title: string;
