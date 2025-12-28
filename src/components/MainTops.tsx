@@ -150,7 +150,7 @@ const MainTops: FC<MainTopsProps> = ({
               {bgImages.map((img, i) => (
                 <div
                   key={i}
-                  className="flex-1 bg-cover bg-center"
+                  className="flex-1 bg-cover bg-center o"
                   style={{
                     backgroundImage: `url(${img})`,
                     opacity: 0.65,
@@ -319,7 +319,13 @@ const MainTops: FC<MainTopsProps> = ({
             <div className={`w-2 h-2 ${accent.bg} opacity-40 rotate-45`} />
           </div>
         </div>
+        <div className="flex justify-center">
+          <a href="https://jacobkrch.com" target="_blank" rel="noopener noreferrer" className="relative bottom-4  text-zinc-600 hover:text-jk-teal text-xs">
+            jacobkrch.com
+          </a>
+        </div>
       </div>
+
     </div>
   );
 };
