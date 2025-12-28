@@ -312,11 +312,11 @@ const MainTops: FC<MainTopsProps> = ({
         {/* Bottom Decoration */}
         <div className="p-8 flex justify-center">
           <div className="flex items-center gap-2">
-            <div className={`w-2 h-2 ${accent.bg}/40 rotate-45`} />
-            <div className={`w-3 h-3 ${accent.bg}/60 rotate-45`} />
+            <div className={`w-2 h-2 ${accent.bg} opacity-40 rotate-45`} />
+            <div className={`w-3 h-3 ${accent.bg} opacity-60 rotate-45`} />
             <div className={`w-4 h-4 ${accent.bg} rotate-45`} />
-            <div className={`w-3 h-3 ${accent.bg}/60 rotate-45`} />
-            <div className={`w-2 h-2 ${accent.bg}/40 rotate-45`} />
+            <div className={`w-3 h-3 ${accent.bg} opacity-60 rotate-45`} />
+            <div className={`w-2 h-2 ${accent.bg} opacity-40 rotate-45`} />
           </div>
         </div>
       </div>
