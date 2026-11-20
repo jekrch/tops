@@ -18,20 +18,22 @@ export interface ListMeta {
   subtitle?: string;
   /** Year or time period for the list */
   year?: string | number;
+  /** Browser tab title (e.g., "J&J's {year} Top Comics"); supports {year}, {n}, {subject} */
+  pageTitle?: string;
 }
 
 export interface ListContent {
   /** Introductory paragraph shown below the header */
   introText?: string;
-  /** Prompt shown when no items are expanded */
+  /** Prompt shown when no items are expanded; {tap} becomes "tap" on touch screens and "click" with a mouse */
   expandPrompt?: string;
+  /** Label above each item's review comment (e.g., "J&J"); defaults to authorInitials */
+  reviewLabel?: string;
 }
 
 export interface ListTheme {
-  /** Tailwind color class for accent (without 'bg-' or 'text-' prefix) */
+  /** Accent color as any CSS color value (e.g., "#5b8592"); exposed as the `accent` Tailwind color */
   accentColor: string;
-  /** Optional custom CSS class for additional theming */
-  customClass?: string;
 }
 
 export interface ListConfig {
@@ -41,21 +43,10 @@ export interface ListConfig {
   theme: ListTheme;
 }
 
-// Helper to interpolate template strings in config
-export function interpolateConfig(config: ListConfig): {
-  title: string;
-  subtitle: string;
-} {
-  const { listSize, subject, year } = config.meta;
-
-  const title = config.meta.title
-    .replace("{n}", String(listSize))
-    .replace("{subject}", subject);
-
-  const subtitle = (config.meta.subtitle || "")
-    .replace("{year}", String(year))
-    .replace("{n}", String(listSize))
-    .replace("{subject}", subject);
-
-  return { title, subtitle };
+/** Fill the {year}, {n} and {subject} placeholders in a config template string. */
+export function fillTemplate(template: string, meta: ListMeta): string {
+  return template
+    .replaceAll("{year}", String(meta.year ?? ""))
+    .replaceAll("{n}", String(meta.listSize))
+    .replaceAll("{subject}", meta.subject);
 }

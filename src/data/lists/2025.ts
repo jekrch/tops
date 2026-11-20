@@ -1,12 +1,13 @@
-import type { ListConfig } from "../types/ListConfig";
-import { type RankItem } from "../types/RankTypes";
+import type { ListConfig } from "../../types/ListConfig";
+import type { RankItem } from "../../types/RankTypes";
+import type { YearList } from "../../types/YearList";
 
 
 /**
  * Configuration for this specific ranking list
  * Edit this to customize the page header, branding, and intro
  */
-export const listConfig: ListConfig = {
+const config: ListConfig = {
   branding: {
     authorName: "Jenny & Jacob's",
     authorInitials: "JJ",
@@ -18,14 +19,16 @@ export const listConfig: ListConfig = {
     subject: "Comic Series",
     subtitle: "Our Favorite Reads of {year}",
     year: 2025,
+    pageTitle: "J&J's {year} Top Comics",
   },
   content: {
     introText:
       "Jenny and I read an obnoxious number of comics this year, both new and old. For fun—and to soberly reflect on this recent obsession—we wrote up a list of the 2025 series that we enjoyed. And then we had to narrow that down (!) to a tidy top ten in the following order.",
-    expandPrompt: "tap to expand",
+    expandPrompt: "{tap} to expand",
+    reviewLabel: "J&J",
   },
   theme: {
-    accentColor: "jk-teal",
+    accentColor: "#5b8592",
   },
 };
 
@@ -33,7 +36,7 @@ export const listConfig: ListConfig = {
  * The ranked items for this list
  * Replace with your own items for a different ranking
  */
-export const rankItems: RankItem[] = [
+const items: RankItem[] = [
   {
     rank: 1,
     name: "Assorted Crisis Events",
@@ -232,3 +235,5 @@ export const rankItems: RankItem[] = [
     link: "https://imagecomics.com/comics/releases/everything-dead-dying-1-of-5"
   }
 ];
+
+export default { config, items } satisfies YearList;

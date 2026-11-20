@@ -1,0 +1,113 @@
+/*
+ * Tops skin for @jekrch/react-viewport-lightbox.
+ *
+ * The library's stylesheet is unlayered, so Tailwind utilities passed through
+ * its `classNames` prop lose to it. These overrides are plain CSS scoped under
+ * the root class (`classNames.root = "tops-lightbox"`) so they out-specify the
+ * library's single-class rules. Colors are the Tailwind zinc values used
+ * elsewhere in the app.
+ */
+
+.tops-lightbox {
+  --rvl-accent: var(--accent);
+  --rvl-overlay-bg: rgba(0, 0, 0, 0.9);
+  --rvl-backdrop-filter: blur(8px);
+  --rvl-radius: 0;
+  --rvl-counter-font-size: 0.875rem;
+
+  --tops-lb-btn-bg: rgba(24, 24, 27, 0.8); /* zinc-900/80 */
+  --tops-lb-btn-fg: #d4d4d8; /* zinc-300 */
+  --tops-lb-btn-border: #3f3f46; /* zinc-700 */
+  --tops-lb-btn-fg-active: #18181b; /* zinc-900 */
+}
+
+/* Top bar: no gradient, p-4 at every width, dimmed while zoomed ------------ */
+
+.tops-lightbox .rvl-top-bar {
+  background: none;
+  --rvl-top-bar-pad-y: 1rem;
+  --rvl-top-bar-pad-x: 1rem;
+}
+.tops-lightbox .rvl-header-actions {
+  gap: 0.5rem;
+}
+.tops-lightbox.rvl-visible .rvl-top-bar:has([data-zoomed]) {
+  opacity: 0.3;
+}
+.tops-lightbox.rvl-visible .rvl-top-bar:has([data-zoomed]):hover {
+  opacity: 1;
+}
+
+/* Square bordered buttons (close + mobile nav arrows) ---------------------- */
+
+.tops-lightbox .rvl-header-actions .rvl-btn,
+.tops-lightbox .rvl-nav-btn {
+  padding: 0;
+  border-radius: 0;
+  border: 1px solid var(--tops-lb-btn-border);
+  background: var(--tops-lb-btn-bg);
+  color: var(--tops-lb-btn-fg);
+  backdrop-filter: none;
+  transition:
+    color 0.2s,
+    background-color 0.2s,
+    border-color 0.2s;
+}
+.tops-lightbox .rvl-header-actions .rvl-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.tops-lightbox .rvl-nav-btn {
+  width: 3rem;
+  height: 3rem;
+}
+.tops-lightbox .rvl-nav-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (hover: hover) {
+  .tops-lightbox .rvl-header-actions .rvl-btn:hover,
+  .tops-lightbox .rvl-nav-btn:hover:not(:disabled) {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--tops-lb-btn-fg-active);
+  }
+}
+.tops-lightbox .rvl-header-actions .rvl-btn:active,
+.tops-lightbox .rvl-nav-btn:active:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--tops-lb-btn-fg-active);
+}
+
+/* Mobile nav row: arrows flanking a muted counter -------------------------- */
+
+.tops-lightbox .rvl-nav-group {
+  gap: 1rem;
+}
+.tops-lightbox .rvl-counter {
+  min-width: 4rem;
+  color: #71717a; /* zinc-500 */
+}
+
+/* The footer wrapper spans the full width; only its content should take
+   clicks, so the zoomed-state reset button underneath stays reachable. */
+.tops-lightbox .rvl-footer {
+  pointer-events: none;
+}
+.tops-lightbox .rvl-footer > * {
+  pointer-events: auto;
+}
+
+/* Desktop: edge arrows (overlay slot) replace the bottom nav row ----------- */
+
+@media (min-width: 48rem) {
+  .tops-lightbox .rvl-nav-row {
+    display: none;
+  }
+  /* Leave room for the edge arrows. */
+  .tops-lightbox .rvl-img {
+    max-width: calc(100vw - 10rem);
+  }
+}

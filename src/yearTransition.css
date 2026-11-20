@@ -1,0 +1,195 @@
+/*
+ * Year switch animation (View Transitions API).
+ *
+ * runYearTransition() wraps the year change in document.startViewTransition()
+ * and sets html[data-year-direction] to "older" or "newer". Each section below
+ * is captured as its own layer so it can animate independently:
+ *
+ *   header    - header panel (background + bottom border): resizes in place,
+ *               since years with and without an intro differ in height
+ *   backdrop  - header images: crossfade with a slight settle-in zoom
+ *   heading   - title row: plain crossfade (it's usually identical)
+ *   num-*     - the year in the subtitle and badge: rolls like an odometer
+ *   switcher  - year buttons: held steady so they stay readable
+ *   indicator - active-year outline: glides to the newly selected year
+ *   intro     - intro paragraph: short slide + fade in the direction of travel
+ *   listbar   - sticky "10 to 1" bar: glides to its new position
+ *   list      - ranked items: same slide as the intro, slightly later
+ */
+
+.vt-year-header { view-transition-name: year-header; }
+.vt-year-backdrop { view-transition-name: year-backdrop; }
+.vt-year-heading { view-transition-name: year-heading; }
+.vt-year-num-subtitle { view-transition-name: year-num-subtitle; }
+.vt-year-num-badge { view-transition-name: year-num-badge; }
+.vt-year-switcher { view-transition-name: year-switcher; }
+.vt-year-indicator { view-transition-name: year-indicator; }
+.vt-year-intro { view-transition-name: year-intro; }
+.vt-year-listbar { view-transition-name: year-listbar; }
+.vt-year-list { view-transition-name: year-list; }
+
+:root {
+  --year-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --year-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --year-duration: 450ms;
+  /* +1 moving to an older year (right in the switcher), -1 to a newer one */
+  --year-dir: 1;
+  --year-shift: calc(var(--year-dir) * 24px);
+}
+
+html[data-year-direction="older"] { --year-dir: 1; }
+html[data-year-direction="newer"] { --year-dir: -1; }
+
+/* Geometry changes (e.g. the list moving up when the intro disappears) */
+::view-transition-group(*) {
+  animation-duration: var(--year-duration);
+  animation-timing-function: var(--year-ease-out);
+}
+
+/* Anything not given its own layer just crossfades quickly */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 200ms;
+}
+
+/* --- Header panel: grows/shrinks with the bottom border attached --- */
+
+::view-transition-group(year-header) {
+  overflow: clip;
+  /* Fills the panel while it's taller than the new snapshot */
+  background: var(--color-zinc-900, #18181b);
+}
+
+::view-transition-old(year-header) {
+  display: none;
+}
+
+::view-transition-new(year-header) {
+  animation: none;
+  /* Natural size, pinned to the bottom edge so the border tracks the resize */
+  block-size: 100%;
+  object-fit: none;
+  object-position: bottom;
+}
+
+/* --- Header backdrop: crossfade with a gentle zoom, clipped to the panel --- */
+
+::view-transition-group(year-backdrop) {
+  overflow: clip;
+}
+
+::view-transition-old(year-backdrop),
+::view-transition-new(year-backdrop) {
+  /* Fill the resizing panel instead of keeping the snapshot's own height */
+  block-size: 100%;
+  object-fit: cover;
+}
+
+::view-transition-old(year-backdrop) {
+  animation: year-fade-out 400ms ease-out both;
+}
+
+::view-transition-new(year-backdrop) {
+  animation: year-backdrop-in 800ms var(--year-ease-out) both;
+}
+
+@keyframes year-backdrop-in {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+/* --- Heading: in-place crossfade (unchanged text stays perfectly still) --- */
+
+::view-transition-old(year-heading),
+::view-transition-new(year-heading) {
+  animation-duration: 250ms;
+}
+
+/* --- Year numbers: odometer roll (older = rolls down, newer = rolls up) --- */
+
+::view-transition-group(year-num-subtitle),
+::view-transition-group(year-num-badge) {
+  overflow: clip;
+}
+
+::view-transition-old(year-num-subtitle),
+::view-transition-old(year-num-badge) {
+  animation: year-roll-out 300ms var(--year-ease-in) both;
+}
+
+::view-transition-new(year-num-subtitle),
+::view-transition-new(year-num-badge) {
+  animation: year-roll-in 450ms var(--year-ease-out) 60ms both;
+}
+
+@keyframes year-roll-out {
+  to {
+    opacity: 0;
+    transform: translateY(calc(var(--year-dir) * 100%));
+  }
+}
+
+@keyframes year-roll-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--year-dir) * -100%));
+  }
+}
+
+/* --- Intro and list: outgoing slides away, incoming slides in --- */
+
+::view-transition-old(year-intro),
+::view-transition-old(year-list) {
+  animation: year-content-out 200ms var(--year-ease-in) both;
+}
+
+::view-transition-new(year-intro),
+::view-transition-new(year-list) {
+  animation: year-content-in var(--year-duration) var(--year-ease-out) both;
+}
+
+::view-transition-new(year-intro) { animation-delay: 60ms; }
+::view-transition-new(year-list) { animation-delay: 100ms; }
+
+@keyframes year-content-out {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--year-shift) * -1));
+  }
+}
+
+@keyframes year-content-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--year-shift));
+  }
+}
+
+@keyframes year-fade-out {
+  to { opacity: 0; }
+}
+
+/* --- Switcher: label colours crossfade quickly in place --- */
+
+::view-transition-old(year-switcher),
+::view-transition-new(year-switcher) {
+  animation-duration: 250ms;
+}
+
+/* --- Active-year indicator: glides between buttons with a hint of settle --- */
+
+::view-transition-group(year-indicator) {
+  animation-timing-function: cubic-bezier(0.3, 1.15, 0.5, 1);
+}
+
+::view-transition-old(year-indicator),
+::view-transition-new(year-indicator) {
+  /* Same outline before and after; skip the crossfade so it reads as one object */
+  animation: none;
+}
+
+::view-transition-old(year-indicator) {
+  display: none;
+}

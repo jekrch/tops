@@ -55,15 +55,25 @@ Open [http://localhost:5173](http://localhost:5173) to see your list.
 
 ## Customizing Your List
 
-All configuration lives in two files inside `src/data/`:
+Each year gets its own file in `src/data/lists/`, named after the year (e.g. `2025.ts`, `2026.ts`). Files there are picked up automatically, and when more than one exists the header shows a year switcher. The selected year is kept in the URL (`?year=2025`), so every year has a shareable link; the default year uses the bare URL.
 
-### `rankItems.ts` — List Configuration & Items
+### Yearly Lists
 
-This file contains two exports:
+```bash
+bun run list:new 2027 --default   # scaffold an empty 2027 list and make it the default
+bun run list:new 2027             # scaffold without changing the default
+bun run list:default 2026         # change which year is shown by default
+```
 
-#### `listConfig` — Page Header & Branding
+`list:new` copies branding, theme, and header settings from the newest existing year, clears the intro text, and starts with no items (the page shows a "still in the works" message until you add some). New lists are marked `draft: true`: drafts appear in the year switcher but can only be opened when running locally. Remove `draft: true` from the file to publish the year. The default year lives in `DEFAULT_YEAR` in `src/data/lists.ts`; if no file exists for it, the newest year is shown.
+
+### `lists/<year>.ts` — List Configuration & Items
+
+Each year file defines a `config` and an `items` array and exports them as `export default { config, items } satisfies YearList;` (add `draft: true` to keep it local-only).
+
+#### `config` — Page Header & Branding
 ```typescript
-export const listConfig: ListConfig = {
+const config: ListConfig = {
   branding: {
     authorName: "Your Name's",      // Shown above the title
     authorInitials: "YN",           // Badge display (2 characters)
@@ -74,21 +84,23 @@ export const listConfig: ListConfig = {
     listSize: 10,                   // Number of items
     subject: "Albums",              // What you're ranking
     subtitle: "My Favorites of {year}",
-    year: 2025
+    year: 2025,
+    pageTitle: "My {year} Top Albums" // Optional browser tab title
   },
   content: {
     introText: "A paragraph introducing your list...",
-    expandPrompt: "tap to expand"   // Hint text when nothing is expanded
+    expandPrompt: "{tap} to expand", // Hint when nothing is expanded ({tap} = "tap"/"click")
+    reviewLabel: "YN"               // Optional label on review comments (defaults to authorInitials)
   },
   theme: {
-    accentColor: "jk-teal"          // Tailwind color class (see Theming below)
+    accentColor: "#5b8592"          // Any CSS color (see Theming below)
   }
 };
 ```
 
-#### `rankItems` — Your Ranked Items
+#### `items` — Your Ranked Items
 ```typescript
-export const rankItems: RankItem[] = [
+const items: RankItem[] = [
   {
     rank: 1,
     name: "Item Name",
@@ -116,7 +128,7 @@ export const rankItems: RankItem[] = [
 
 ### Type Reference
 
-See `src/types/RankTypes.ts` and `src/types/ListConfig.ts` for the complete type definitions.
+See `src/types/RankTypes.ts`, `src/types/ListConfig.ts`, and `src/types/YearList.ts` for the complete type definitions.
 
 
 ## Adding Images
@@ -136,27 +148,19 @@ Reference them in your config with paths starting from `/images/`:
 cover_image: "/images/items/item-name-cover.jpg"
 ```
 
+`bun run dev` and `bun run build` generate resized WebP copies of these images in `public/images/generated/` (gitignored), which the cards, thumbnails, and header use; the lightbox shows the originals. Run `bun run images` to regenerate them by hand. Remote image URLs are used as-is.
+
 
 ## Theming
 
-The default accent color is `jk-teal`. To use a different color:
-
-1. Define your color in your Tailwind config or CSS:
-```css
-/* In src/index.css or your global styles */
-@theme {
-  --color-my-accent: #your-hex-color;
-}
-```
-
-2. Update `listConfig.theme.accentColor`:
+Set `config.theme.accentColor` in your year file to any CSS color:
 ```typescript
 theme: {
-  accentColor: "my-accent"
+  accentColor: "#c2410c"
 }
 ```
 
-Standard Tailwind colors like `blue-500`, `emerald-400`, etc. also work if configured.
+The color is applied as the `--accent` CSS variable and is available as the `accent` Tailwind color (`bg-accent`, `text-accent/70`, etc.), so it applies to the header, cards, detail panels, and lightbox. The default is the teal `#5b8592`.
 
 
 ## Deploying to GitHub Pages (Free)
@@ -208,6 +212,9 @@ To use a custom domain like `mytopten.com`:
 | `bun run preview` | Preview production build locally |
 | `bun run deploy` | Build and deploy to GitHub Pages |
 | `bun run lint` | Run ESLint |
+| `bun run images` | Generate resized image variants |
+| `bun run list:new <year> [--default]` | Scaffold an empty draft list for a new year |
+| `bun run list:default <year>` | Set the year shown by default |
 
 
 ## Built With
